@@ -1,0 +1,12 @@
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="ru.learnup.march.ContactsMapper">
+    <resultMap id="contact" type="ru.learnup.march.Contact" />
+
+    <select id="getContactById" parameterType="java.lang.Long" resultMap="contact">
+        select * from contact where id = #{id}
+    </select>
+
+    <select id="getContacts" resultMap="contact">
+        select * from contact
+    </select>
+</mapper>
